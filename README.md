@@ -15,7 +15,6 @@
 
 ### 4. You should have MySQL installed, otherwise:
 - sudo apt-get install mysql-server
-- mysql -u root -p
 
 ### 5. You should have MySQL Connector/J JAR file available, otherwise:
 - wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.39.tar.gz

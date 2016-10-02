@@ -76,17 +76,23 @@
 
 ## Using AWS EC2 Image
 ### 1. Go for the EC2 menu
+
 #### 1.1 Click on Launch Instance
+
 #### 1.2 Look for the AMI ID ami-3bb56c5b in Community AMIs
+
 #### 1.3 When asked for, create a new key pair - download it and keep it safe!
+
 #### 1.4 When asked for, create a new security group with the following rules:
 - SSH with source Anywhere
 - HTTPS with source Anywhere
 - Custom TCP Rule with Port 8888 and source Anywhere
+
 #### 1.5 After your instance is ready, you can SSH into it:
 - ssh -i mykeypairfile.pem ubuntu@ec2-XX-XX-XX-XX.us-west-2.compute.amazonaws.com
+
 #### 1.6 Update and then install Git
 - sudo apt-get update
 - sudo apt-get install git
-#### 1.7 Clone the repository and run PySpark, as in the "Class Materials" section
 
+#### 1.7 Clone the repository and run PySpark, as in the "Class Materials" section

@@ -43,29 +43,28 @@
 - jupyter notebook --generate-config
 - cd ~/.jupyter
 - vi jupyter_notebook_config.py
-
-	c = get_config()
-	c.IPKernelApp.pylab = 'inline'
-	c.NotebookApp.certfile = '/home/ubuntu/certificates/mycert.pem'
-	c.NotebookApp.ip = '*'
-	c.NotebookApp.open_browser = False
-	c.NotebookApp.port = 8888
+	- c = get_config()
+	- c.IPKernelApp.pylab = 'inline'
+	- c.NotebookApp.certfile = '/home/ubuntu/certificates/mycert.pem'
+	- c.NotebookApp.ip = '*'
+	- c.NotebookApp.open_browser = False
+	- c.NotebookApp.port = 8888
 
 ## Configurations
 ### 1. Apache Spark - you have to add packages/jars so Spark can handle XML and JDBC sources
 - cd /home/ubuntu/spark/conf
 - cp spark-defaults.conf.template spark-defaults.conf
 - vi spark-defaults.conf
-	spark.jars.packages    com.databricks:spark-xml_2.11:0.4.0
-	spark.jars	       /home/ubuntu/mysql-connector-java-5.1.39/mysql-connector-java-5.1.39-bin.jar
+	- spark.jars.packages    com.databricks:spark-xml_2.11:0.4.0
+	- spark.jars	       /home/ubuntu/mysql-connector-java-5.1.39/mysql-connector-java-5.1.39-bin.jar
 
 ### 2. Environment Variables - you have to add this variables, so you can easily run PySpark as a Jupyter Notebook
 - vi ~/.bashrc
-	export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-	export SPARK_HOME="/home/ubuntu/spark"
-	export PATH="$SPARK_HOME/bin:$SPARK_HOME:$PATH"
-	export PYSPARK_DRIVER_PYTHON="jupyter"
-	export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+	- export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+	- export SPARK_HOME="/home/ubuntu/spark"
+	- export PATH="$SPARK_HOME/bin:$SPARK_HOME:$PATH"
+	- export PYSPARK_DRIVER_PYTHON="jupyter"
+	- export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 
 ## Class Materials
 ### 1. Clone the Repository
@@ -85,7 +84,7 @@
 - HTTPS with source Anywhere
 - Custom TCP Rule with Port 8888 and source Anywhere
 #### 1.5 After your instance is ready, you can SSH into it:
-ssh -i <YOUR KEY PAIR FILE>.pem ubuntu@ec2-<IP OF YOUR INSTANCE>.us-west-2.compute.amazonaws.com
+- ssh -i mykeypairfile.pem ubuntu@ec2-XX-XX-XX-XX.us-west-2.compute.amazonaws.com
 #### 1.6 Update and then install Git
 - sudo apt-get update
 - sudo apt-get install git

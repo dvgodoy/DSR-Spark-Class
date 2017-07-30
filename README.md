@@ -80,7 +80,7 @@
 
 #### 1.1 Click on Launch Instance
 
-#### 1.2 Look for the AMI ID ami-3bb56c5b in Community AMIs
+#### 1.2 Look for the AMI ID ami-7aa74302 in Community AMIs (Oregon region)
 
 #### 1.3 When asked for, create a new key pair - download it and keep it safe!
 

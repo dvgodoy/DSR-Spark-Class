@@ -5,12 +5,11 @@
 - sudo apt-get install oracle-java8-installer
 
 ### 2. You should have Anaconda installed, otherwise:
-- wget https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh
-- bash Anaconda2-4.2.0-Linux-x86_64.sh
+- wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
+- bash Anaconda3-4.2.0-Linux-x86_64.sh
 - source ~/.bashrc
 
-### 3. You should have PY4J and SPARK-SKLEARN packages installed, otherwise:
-- pip install py4j
+### 3. You should have SPARK-SKLEARN packages installed, otherwise:
 - pip install spark-sklearn
 
 ### 4. You should have MySQL installed, otherwise:
@@ -21,9 +20,9 @@
 - tar -xvf mysql-connector-java-5.1.39.tar.gz 
 
 ### 6. You should have Spark 2.0 installed, otherwise:
-- wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-hadoop2.7.tgz
-- tar -xvf spark-2.0.0-bin-hadoop2.7.tgz
-- mv spark-2.0.0-bin-hadoop2.7 spark
+- wget https://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz
+- tar -xvf spark-2.2.0-bin-hadoop2.7.tgz
+- ln -s spark-2.2.0-bin-hadoop2.7 spark
 
 ### 7. If you'll be running Jupyter Notebook from an EC2 instance, you should follow these steps:
 #### 7.0 Make sure the Security Group associated with your EC2 instance has the following rules:
@@ -45,7 +44,7 @@
 - vi jupyter_notebook_config.py
 	- c = get_config()
 	- c.IPKernelApp.pylab = 'inline'
-	- c.NotebookApp.certfile = '/home/ubuntu/certificates/mycert.pem'
+	- c.NotebookApp.certfile = '/home/ubuntu/certificates/server.pem'
 	- c.NotebookApp.ip = '*'
 	- c.NotebookApp.open_browser = False
 	- c.NotebookApp.port = 8888
@@ -63,8 +62,10 @@
 	- export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 	- export SPARK_HOME="/home/ubuntu/spark"
 	- export PATH="$SPARK_HOME/bin:$SPARK_HOME:$PATH"
-	- export PYSPARK_DRIVER_PYTHON="jupyter"
-	- export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+- source ~/.bashrc
+
+### 3. PySpark - you have to install PYSPARK:
+- pip install pyspark
 
 ## Class Materials
 ### 1. Clone the Repository
